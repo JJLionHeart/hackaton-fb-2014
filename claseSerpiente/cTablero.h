@@ -10,6 +10,7 @@ class tablero{
 public:
     tablero();
     void agregar(Cuadrito c);
+    void agregar(bloque y);
     void agregar(int x, int y);
     void refrescar();
     void LimpiarTablero();
@@ -19,6 +20,11 @@ private:
 
 
 };
+void tablero::agregar(bloque y){
+int x=y.getX();
+int a=y.getY();
+Tablero[a][x]=254;
+}
 tablero::tablero(){
 for(int i=0;i<25;i++)
     for(int j=0;j<80;j++)
