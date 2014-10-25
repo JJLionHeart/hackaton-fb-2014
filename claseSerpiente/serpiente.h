@@ -5,7 +5,7 @@
 class Vibora{
 public:
     void agregarElemento(Cuadrito c);
-    int getCoordenadaPrincipal();
+    void getCoordenadaPrincipal(int &ix, int &iy);
     void dibujarVibora(tablero &t);
     Vibora();
 private:
@@ -19,22 +19,23 @@ for(int i=0;i<100;i++){
     elementos[i].setY(0);
 }
 iCantidadElementos = 3;
-elementos[0].setAvtivo(true);
+elementos[0].setActivo(true);
 elementos[0].setX(10);
 elementos[0].setY(10);
-elementos[1].setAvtivo(true);
+elementos[1].setActivo(true);
 elementos[1].setX(11);
 elementos[1].setY(10);
-elementos[2].setAvtivo(true);
+elementos[2].setActivo(true);
 elementos[2].setX(12);
 elementos[2].setY(10);
 }
 void Vibora::dibujarVibora(tablero &t){
 for(int i = 0;i<iCantidadElementos;i++){
-    t.agregar(elemento[i]);
+    t.agregar(elementos[i]);
 }
+t.refrescar();
 }
-int getCoordenadaPrincipal(int &ix, int &iy){
+void Vibora::getCoordenadaPrincipal(int &ix, int &iy){
 ix=elementos[0].getX();
 iy=elementos[0].getY();
 }

@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1414204270 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\main.cpp
+	<iostream>
+	"serpiente.h"
+
+1414204571 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
+	"cuadrito.h"
+	"cTablero.h"
+
+1414203074 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\cuadrito.h
+
+1414204825 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"cuadrito.h"
+

@@ -2,11 +2,11 @@
 1414202461 source:c:\users\eliasm\desktop\hackaton-fb-2014\tablero\main.cpp
 	<iostream>
 
-1414203203 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\main.cpp
+1414204449 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\main.cpp
 	<iostream>
 	"cTablero.h"
 
-1414203895 c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\ctablero.h
+1414204825 c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
