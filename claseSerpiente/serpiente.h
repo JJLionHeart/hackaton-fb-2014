@@ -4,6 +4,7 @@
 #include <iostream>
 #include "cuadrito.h"
 #include "cTablero.h"
+#include "bloque.h"
 class Vibora{
 public:
     void agregarElemento(Cuadrito c);
@@ -14,11 +15,18 @@ public:
     void cambiarCuadritos();
     void Modificar(int n,tablero &t);
     void depurar();
+    void setBloque(bloque &a);
 private:
     Cuadrito elementos[100];
     int Direccion;
     int iCantidadElementos;
+    bloque b;
 };
+void Vibora::setBloque(bloque &a)
+{
+    b=a;
+}
+
 Vibora::Vibora(){
     Direccion = 2;
 for(int i=0;i<100;i++){
