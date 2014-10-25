@@ -15,6 +15,8 @@ public:
     void cambiarCuadritos();
     void Modificar(int n,tablero &t);
     void depurar();
+    void reiniciar();
+    bool comprobarchoque(tablero &t);
     void setBloque(bloque *a);
 private:
     bloque *b;
@@ -22,6 +24,38 @@ private:
     int Direccion;
     int iCantidadElementos;
 };
+bool Vibora::comprobarchoque(tablero &t){
+    bool choque=false;
+if(Direccion==1)
+    choque = t.checarcolision(elementos[0].getX(),elementos[0].getY()-1);
+else if(Direccion==2)
+    choque = t.checarcolision(elementos[0].getX()+1,elementos[0].getY());
+else if(Direccion==3)
+    choque = t.checarcolision(elementos[0].getX(),elementos[0].getY()+1);
+else if(Direccion==4)
+    choque = t.checarcolision(elementos[0].getX()-1,elementos[0].getY());
+return choque;
+}
+void Vibora::reiniciar(){
+
+Direccion = 2;
+for(int i=0;i<100;i++){
+    elementos[i].setActivo(false);
+    elementos[i].setX(0);
+    elementos[i].setY(0);
+    elementos[i].setDireccion(2);
+}
+iCantidadElementos = 3;
+elementos[0].setActivo(true);
+elementos[0].setX(12);
+elementos[0].setY(10);
+for(int i=1;i<3;i++)
+{
+    elementos[i].setActivo(true);
+    elementos[i].setX(12-i);
+    elementos[i].setY(10);
+}
+}
 void Vibora::setBloque(bloque *a){
 b=a;
 }
@@ -33,6 +67,7 @@ for(int i=0;i<100;i++){
     elementos[i].setY(0);
     elementos[i].setDireccion(2);
 }
+
 iCantidadElementos = 3;
 elementos[0].setActivo(true);
 elementos[0].setX(12);
@@ -142,6 +177,10 @@ void Vibora::agregarElemento()
 }
 
 void Vibora::Mover(tablero &t){
+
+if(comprobarchoque(t))
+    reiniciar();
+else{
 for(int i=0;i<iCantidadElementos;i++)
     elementos[i].Movimiento();
 if(elementos[0].getX()==b->getX()&&elementos[0].getY()==b->getY()){
@@ -150,8 +189,10 @@ if(elementos[0].getX()==b->getX()&&elementos[0].getY()==b->getY()){
     b->cambiaLugar();
     t.agregar(*b);
 }
+}
 dibujarVibora(t);
 //depurar();
 //Sleep(1000);
 }
+
 #endif // SERPIENTE_H_INCLUDED

@@ -23,10 +23,13 @@ public:
     void incrementarCambio();
     void getCoordCambios(int &a,int&b);
     void modStack(int a,int b,int ndir);
+    void setC(int ca);
+    char getC();
     void compStack();
 private:
     int x; //cordenada x
     int y; //cordenada y
+    char c;
 int stacker[1000][3];
     int cantCambios;
     bool activo;
@@ -36,6 +39,9 @@ int stacker[1000][3];
     int nuevadir;//la nueva direccion que tiene que adoptar
     int direccion;
 };
+char Cuadrito::getC(){
+    return c;
+}
 void Cuadrito::compStack(){
 if(cambio){
     bool encontrado=false;
@@ -86,8 +92,12 @@ cambio = a;
 void Cuadrito::setNuevaDir(int a){
 nuevadir=a;
 }
+void Cuadrito::setC(int ca){
+c=ca;
+}
 Cuadrito::Cuadrito() //constructor default
 {
+    c=254;
     x=0;
     y=0;
     cantCambios=0;

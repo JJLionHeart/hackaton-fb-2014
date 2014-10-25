@@ -15,18 +15,42 @@ public:
     void refrescar();
     void LimpiarTablero();
     bool checar(int a,int b);
+    bool checarcolision(int a,int b);
+    void bordes();
 
 private:
-    unsigned char Tablero[25][80];
+    unsigned char Tablero[26][80];
 
 
 };
+void tablero::bordes()
+{
+    for(int i=0;i<80;i++)
+    {
+        Tablero[0][i]=254;
+        Tablero[24][i]=254;
+    }
+    for(int j=0;j<25;j++)
+    {
+        Tablero[j][0]=254;
+        Tablero[j][79]=254;
+    }
+
+}
+
 bool tablero::checar(int a,int b){
-if(Tablero[b][a]!= 254)
+if(Tablero[b][a]!= 2)
     return true;
 else
     return false;
 }
+bool tablero::checarcolision(int a,int b){
+if(Tablero[b][a]== 254)
+    return true;
+else
+    return false;
+}
+
 void tablero::agregar(bloque y){
     int x,a;
     do{
@@ -51,13 +75,17 @@ void tablero::LimpiarTablero(){
 
 void tablero::refrescar(){
     system("cls");
+    bordes();
+    Tablero[24][79]='\r';
+    Tablero[25][0]='\0';
     printf("%s", Tablero);
+
 }
 
 void tablero::agregar(Cuadrito c){
     int x=c.getX();
     int y=c.getY();
-    Tablero[y][x]=254;
+    Tablero[y][x]=c.getC();
 }
 
 void tablero::agregar(int x, int y){

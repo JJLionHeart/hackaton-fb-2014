@@ -6,16 +6,16 @@
 	"serpiente.h"
 	"bloque.h"
 
-1414248926 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
+1414254350 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
 	<windows.h>
 	<iostream>
 	"cuadrito.h"
 	"cTablero.h"
 	"bloque.h"
 
-1414243115 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\cuadrito.h
+1414251004 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\cuadrito.h
 
-1414249075 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
+1414258579 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
