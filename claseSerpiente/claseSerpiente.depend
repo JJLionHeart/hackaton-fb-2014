@@ -1,20 +1,21 @@
 # depslib dependency file v1.0
-1414244573 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\main.cpp
+1414248683 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\main.cpp
 	<iostream>
 	<windows.h>
 	<conio.h>
 	"serpiente.h"
 	"bloque.h"
 
-1414243115 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
+1414248926 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
 	<windows.h>
 	<iostream>
 	"cuadrito.h"
 	"cTablero.h"
+	"bloque.h"
 
 1414243115 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\cuadrito.h
 
-1414244573 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
+1414249075 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
@@ -76,12 +77,11 @@
 	"cuadrito.h"
 	"cTablero.h"
 
-1414244573 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\bloque.h
+1414247766 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\bloque.h
 	<stdlib.h>
 	<time.h>
 	<windows.h>
 	<iostream>
-	"cuadrito.h"
 	"cTablero.h"
 
 1414244939 c:\users\juanjosé\desktop\claseserpiente\bloque.h

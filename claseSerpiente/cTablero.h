@@ -14,16 +14,26 @@ public:
     void agregar(int x, int y);
     void refrescar();
     void LimpiarTablero();
+    bool checar(int a,int b);
 
 private:
     unsigned char Tablero[25][80];
 
 
 };
+bool tablero::checar(int a,int b){
+if(Tablero[b][a]!= 254)
+    return true;
+else
+    return false;
+}
 void tablero::agregar(bloque y){
-int x=y.getX();
-int a=y.getY();
-Tablero[a][x]=254;
+    int x,a;
+    do{
+x=y.getX();
+a=y.getY();
+    }while(!checar(x,a));
+Tablero[a][x]=2;
 }
 tablero::tablero(){
 for(int i=0;i<25;i++)

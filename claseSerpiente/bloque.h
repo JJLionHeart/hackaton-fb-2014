@@ -4,7 +4,7 @@
 #include <time.h>       /* time */
 #include <windows.h>
 #include <iostream>
-#include "cuadrito.h"
+
 #include "cTablero.h"
 
 class bloque{
@@ -15,11 +15,17 @@ public:
     void setY(int iY);
     int getX();
     int getY();
+    void cambiaLugar();
 private:
     int x; //cordenada x
     int y; //cordenada y
 };
+void bloque::cambiaLugar(){
 
+    x=rand()%78+1;
+    y=rand()%23+1;
+
+}
 
 bloque::bloque()
 {

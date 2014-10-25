@@ -3,13 +3,17 @@
 #include<conio.h>
 using namespace std;
 #include "serpiente.h"
+
 #include "bloque.h"
 int main()
 {
     bloque y;
     Vibora a;
     tablero t;
+    bloque *point;
+    point = &y;
     t.agregar(y);
+    a.setBloque(point);
     int contador=0;
     short int u,d,r,l;
     while(true){

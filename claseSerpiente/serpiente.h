@@ -4,9 +4,10 @@
 #include <iostream>
 #include "cuadrito.h"
 #include "cTablero.h"
+#include "bloque.h"
 class Vibora{
 public:
-    void agregarElemento(Cuadrito c);
+    void agregarElemento();
     void getCoordenadaPrincipal(int &ix, int &iy);
     void dibujarVibora(tablero t);
     void Mover(tablero &t);
@@ -14,11 +15,16 @@ public:
     void cambiarCuadritos();
     void Modificar(int n,tablero &t);
     void depurar();
+    void setBloque(bloque *a);
 private:
+    bloque *b;
     Cuadrito elementos[100];
     int Direccion;
     int iCantidadElementos;
 };
+void Vibora::setBloque(bloque *a){
+b=a;
+}
 Vibora::Vibora(){
     Direccion = 2;
 for(int i=0;i<100;i++){
@@ -27,11 +33,11 @@ for(int i=0;i<100;i++){
     elementos[i].setY(0);
     elementos[i].setDireccion(2);
 }
-iCantidadElementos = 20;
+iCantidadElementos = 3;
 elementos[0].setActivo(true);
 elementos[0].setX(12);
 elementos[0].setY(10);
-for(int i=1;i<20;i++)
+for(int i=1;i<3;i++)
 {
     elementos[i].setActivo(true);
     elementos[i].setX(12-i);
@@ -82,6 +88,7 @@ void Vibora::Modificar(int n,tablero &t){
         }
     }
     t.LimpiarTablero();
+    t.agregar(*b);
     Mover(t);
 
 }
@@ -99,42 +106,50 @@ void Vibora::cambiarCuadritos(){
 
     }
 
-/*void Vibora::agregarElemento(Cuadrito c)
+void Vibora::agregarElemento()
 {
-	int d = c.getDireccion();
-	elemento[n].setActivo(true);
+    elementos[iCantidadElementos]=elementos[iCantidadElementos-1];
+	int d = elementos[iCantidadElementos-1].getDireccion();
+	//elemento[iCantidadElementos].setActivo(true);*/
 	switch(d)
 	{
 		case 1: {
-			elemento[n].setY(c.getY+1);
-			elemento[n].setX(c.getX);
-			elemento[n].setDireccion(d);
+			elementos[iCantidadElementos].setY(elementos[iCantidadElementos-1].getY()+1);
+			elementos[iCantidadElementos].setX(elementos[iCantidadElementos-1].getX());
+
 			break;
 		}
 		case 2: {
-			elemento[n].setY(c.getY);
-			elemento[n].setX(c.getX-1);
-			elemento[n].setDireccion(d);
+			elementos[iCantidadElementos].setY(elementos[iCantidadElementos-1].getY());
+			elementos[iCantidadElementos].setX(elementos[iCantidadElementos-1].getX()-1);
+
 			break;
 		}
 		case 3: {
-			elemento[n].setY(c.getY+1);
-			elemento[n].setX(c.getX);
-			elemento[n].setDireccion(d);
+			elementos[iCantidadElementos].setY(elementos[iCantidadElementos-1].getY()-1);
+			elementos[iCantidadElementos].setX(elementos[iCantidadElementos-1].getX());
+
 			break;
 		}
 		case 4: {
-			elemento[n].setX(c.getX+1);
-			elemento[n].setY(c.getY);
-			elemento[n].setDireccion(d);
+			elementos[iCantidadElementos].setX(elementos[iCantidadElementos-1].getX()+1);
+			elementos[iCantidadElementos].setY(elementos[iCantidadElementos-1].getY());
+
 			break;
 		}
 	}
+	iCantidadElementos++;
 }
-*/
+
 void Vibora::Mover(tablero &t){
 for(int i=0;i<iCantidadElementos;i++)
     elementos[i].Movimiento();
+if(elementos[0].getX()==b->getX()&&elementos[0].getY()==b->getY()){
+    t.LimpiarTablero();
+    agregarElemento();
+    b->cambiaLugar();
+    t.agregar(*b);
+}
 dibujarVibora(t);
 //depurar();
 //Sleep(1000);
