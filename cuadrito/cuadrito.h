@@ -5,26 +5,32 @@ class Cuadrito
 {
 public:
     Cuadrito();
-    Cuadrito(int iX, int iY);
+    Cuadrito(int iX, int iY, bool iActivo);
     void setX(int iX);
     void setY(int iY);
+    void setActivo(bool iActivo);
     int getX();
     int getY();
+    bool getActivo();
+
 private:
     int x; //cordenada x
     int y; //cordenada y;
+    bool activo;
 };
 
 Cuadrito::Cuadrito() //constructor default
 {
     x=0;
     y=0;
+    activo=false;
 }
 
-Cuadrito::Cuadrito(int iX, int iY) //constructor con X y Y
+Cuadrito::Cuadrito(int iX, int iY, bool iActivo) //constructor con X y Y
 {
     x=iX;
     y=iY;
+    activo=iActivo;
 }
 
 void Cuadrito::setX(int iX) //modificar X
@@ -37,6 +43,11 @@ void Cuadrito::setY(int iY) //modificar Y
     y=iY;
 }
 
+void Cuadrito::setActivo(bool iActivo)
+{
+    activo=iActivo;
+}
+
 int Cuadrito::getX() //obtener X
 {
     return x;
@@ -46,5 +57,11 @@ int Cuadrito::getY() //obtener Y
 {
     return y;
 }
+
+bool Cuadrito::getActivo()
+{
+    return activo;
+}
+
 
 #endif // CUADRITO_H_INCLUDED
