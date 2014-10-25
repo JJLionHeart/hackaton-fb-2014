@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="bloque.h" />
 		<Unit filename="cTablero.h" />
 		<Unit filename="cuadrito.h" />
 		<Unit filename="main.cpp" />

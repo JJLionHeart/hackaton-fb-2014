@@ -57,7 +57,7 @@ void tablero::agregar(bloque y){
 x=y.getX();
 a=y.getY();
     }while(!checar(x,a));
-Tablero[a][x]=2;
+Tablero[a][x]=254;
 }
 tablero::tablero(){
 for(int i=0;i<25;i++)
