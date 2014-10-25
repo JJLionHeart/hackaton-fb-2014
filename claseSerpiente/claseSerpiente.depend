@@ -19,3 +19,24 @@
 	<windows.h>
 	"cuadrito.h"
 
+1414211966 source:c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	"serpiente.h"
+
+1414210180 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\serpiente.h
+	<windows.h>
+	<iostream>
+	"cuadrito.h"
+	"cTablero.h"
+
+1414204961 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\cuadrito.h
+
+1414211171 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\ctablero.h
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"cuadrito.h"
+
