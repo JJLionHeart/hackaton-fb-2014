@@ -20,6 +20,7 @@ for(int i=0;i<100;i++){
     elementos[i].setActivo(false);
     elementos[i].setX(0);
     elementos[i].setY(0);
+    elementos[i].setDireccion(2);
 }
 iCantidadElementos = 3;
 elementos[0].setActivo(true);
