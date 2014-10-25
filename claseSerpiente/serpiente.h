@@ -1,12 +1,15 @@
 #ifndef SERPIENTE_H_INCLUDED
 #define SERPIENTE_H_INCLUDED
+#include <windows.h>
+#include <iostream>
 #include "cuadrito.h"
 #include "cTablero.h"
 class Vibora{
 public:
     void agregarElemento(Cuadrito c);
     void getCoordenadaPrincipal(int &ix, int &iy);
-    void dibujarVibora(tablero &t);
+    void dibujarVibora(tablero t);
+    void Mover();
     Vibora();
 private:
     Cuadrito elementos[100];
@@ -29,9 +32,9 @@ elementos[2].setActivo(true);
 elementos[2].setX(12);
 elementos[2].setY(10);
 }
-void Vibora::dibujarVibora(tablero &t){
-for(int i = 0;i<iCantidadElementos;i++){
-    t.agregar(elementos[i]);
+void Vibora::dibujarVibora(tablero t){
+for(int ic = 0;ic<iCantidadElementos;ic++){
+    t.agregar(elementos[ic]);
 }
 t.refrescar();
 }
@@ -39,4 +42,16 @@ void Vibora::getCoordenadaPrincipal(int &ix, int &iy){
 ix=elementos[0].getX();
 iy=elementos[0].getY();
 }
+void Vibora::Mover()
+{
+    int n=0;
+    for(int a=0;a<iCantidadElementos;a++)
+    {
+        n=elementos[a].getX();
+        n++;
+        elementos[a].setX(n);
+
+    }
+}
+
 #endif // SERPIENTE_H_INCLUDED
