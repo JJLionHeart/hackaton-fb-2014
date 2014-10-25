@@ -22,7 +22,7 @@ Cuadrito::Cuadrito() //constructor default
 {
     x=0;
     y=0;
-    bool=false;
+    activo=false;
 }
 
 Cuadrito::Cuadrito(int iX, int iY, bool iActivo) //constructor con X y Y
