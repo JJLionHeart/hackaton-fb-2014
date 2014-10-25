@@ -9,7 +9,6 @@ int main()
     bloque y;
     Vibora a;
     tablero t;
-    t.agregar(y);
     int contador=0;
     short int u,d,r,l;
     while(true){
@@ -40,14 +39,12 @@ int main()
 
         }else{
         t.LimpiarTablero();
-        t.agregar(y);
         a.Mover(t);
 
 }
         }else{
         contador--;
         t.LimpiarTablero();
-        t.agregar(y);
         a.Mover(t);
         }
     Sleep(100);

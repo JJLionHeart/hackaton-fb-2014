@@ -24,8 +24,8 @@ private:
 bloque::bloque()
 {
     srand (time(NULL));
-    x=rand()%78+1;
-    y=rand()%23+1;
+    x=rand()%80+1;
+    y=rand()%25+1;
 }
 
 

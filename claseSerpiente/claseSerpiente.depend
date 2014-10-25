@@ -1,26 +1,24 @@
 # depslib dependency file v1.0
-1414244573 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\main.cpp
+1414225158 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\main.cpp
 	<iostream>
 	<windows.h>
 	<conio.h>
 	"serpiente.h"
-	"bloque.h"
 
-1414243115 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
+1414224561 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\serpiente.h
 	<windows.h>
 	<iostream>
 	"cuadrito.h"
 	"cTablero.h"
 
-1414243115 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\cuadrito.h
+1414224514 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\cuadrito.h
 
-1414244573 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
+1414211036 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
 	<windows.h>
 	"cuadrito.h"
-	"bloque.h"
 
 1414239522 source:c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\main.cpp
 	<iostream>
@@ -45,46 +43,28 @@
 	"cuadrito.h"
 	"bloque.h"
 
-1414244573 source:c:\users\juanjosé\desktop\claseserpiente\main.cpp
+1414231976 source:c:\users\juanjosé\desktop\claseserpiente\main.cpp
 	<iostream>
 	<windows.h>
 	<conio.h>
 	"serpiente.h"
-	"bloque.h"
 
-1414243115 c:\users\juanjosé\desktop\claseserpiente\serpiente.h
+1414232019 c:\users\juanjosé\desktop\claseserpiente\serpiente.h
 	<windows.h>
 	<iostream>
 	"cuadrito.h"
 	"cTablero.h"
 
-1414243115 c:\users\juanjosé\desktop\claseserpiente\cuadrito.h
+1414232882 c:\users\juanjosé\desktop\claseserpiente\cuadrito.h
 
-1414244573 c:\users\juanjosé\desktop\claseserpiente\ctablero.h
+1414211036 c:\users\juanjosé\desktop\claseserpiente\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
 	<windows.h>
 	"cuadrito.h"
-	"bloque.h"
 
 1414240227 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\bloque.h
-	<stdlib.h>
-	<time.h>
-	<windows.h>
-	<iostream>
-	"cuadrito.h"
-	"cTablero.h"
-
-1414244573 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\bloque.h
-	<stdlib.h>
-	<time.h>
-	<windows.h>
-	<iostream>
-	"cuadrito.h"
-	"cTablero.h"
-
-1414244573 c:\users\juanjosé\desktop\claseserpiente\bloque.h
 	<stdlib.h>
 	<time.h>
 	<windows.h>
