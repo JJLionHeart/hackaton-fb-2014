@@ -2,11 +2,13 @@
 1414202461 source:c:\users\eliasm\desktop\hackaton-fb-2014\tablero\main.cpp
 	<iostream>
 
-1414204449 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\main.cpp
+1414207795 source:c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\main.cpp
 	<iostream>
+	<windows.h>
 	"cTablero.h"
+	"serpiente.h"
 
-1414204825 c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\ctablero.h
+1414208913 c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
@@ -14,4 +16,8 @@
 	"cuadrito.h"
 
 1414203203 c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\cuadrito.h
+
+1414204571 c:\users\juanjosé\documents\github\hackaton-fb-2014\tablero\serpiente.h
+	"cuadrito.h"
+	"cTablero.h"
 
