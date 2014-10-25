@@ -11,6 +11,8 @@ private:
 
 };
 
+
+
 void tablero::agregar(Cuadrito c){
     int x=Cuadrito.getX();
     int y=Cuadrito.getY();
