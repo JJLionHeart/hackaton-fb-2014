@@ -5,10 +5,12 @@
 #include <conio.h>
 #include <windows.h>
 #include "cuadrito.h"
+#include "bloque.h"
 class tablero{
 public:
     tablero();
     void agregar(Cuadrito c);
+    void agregar(int x, int y);
     void refrescar();
     void LimpiarTablero();
 
@@ -39,6 +41,10 @@ void tablero::refrescar(){
 void tablero::agregar(Cuadrito c){
     int x=c.getX();
     int y=c.getY();
+    Tablero[y][x]=254;
+}
+
+void tablero::agregar(int x, int y){
     Tablero[y][x]=254;
 }
 

@@ -6,6 +6,7 @@ class Cuadrito
 public:
     Cuadrito();
     Cuadrito(int iX, int iY, bool iActivo, int direccion);
+    Cuadrito(int iX, int iY);
     void setX(int iX);
     void setY(int iY);
     void setActivo(bool iActivo);
@@ -108,6 +109,12 @@ Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor co
     y=iY;
     activo=iActivo;
     direccion=2;
+}
+
+Cuadrito::Cuadrito(int iX, int iY)
+{
+    x=iX;
+    y=iY;
 }
 
 void Cuadrito::setX(int iX) //modificar X

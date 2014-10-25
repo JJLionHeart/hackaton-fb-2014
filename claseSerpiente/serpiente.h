@@ -99,8 +99,39 @@ void Vibora::cambiarCuadritos(){
 
     }
 
-
-
+/*void Vibora::agregarElemento(Cuadrito c)
+{
+	int d = c.getDireccion();
+	elemento[n].setActivo(true);
+	switch(d)
+	{
+		case 1: {
+			elemento[n].setY(c.getY+1);
+			elemento[n].setX(c.getX);
+			elemento[n].setDireccion(d);
+			break;
+		}
+		case 2: {
+			elemento[n].setY(c.getY);
+			elemento[n].setX(c.getX-1);
+			elemento[n].setDireccion(d);
+			break;
+		}
+		case 3: {
+			elemento[n].setY(c.getY+1);
+			elemento[n].setX(c.getX);
+			elemento[n].setDireccion(d);
+			break;
+		}
+		case 4: {
+			elemento[n].setX(c.getX+1);
+			elemento[n].setY(c.getY);
+			elemento[n].setDireccion(d);
+			break;
+		}
+	}
+}
+*/
 void Vibora::Mover(tablero &t){
 for(int i=0;i<iCantidadElementos;i++)
     elementos[i].Movimiento();

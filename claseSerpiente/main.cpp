@@ -3,8 +3,10 @@
 #include<conio.h>
 using namespace std;
 #include "serpiente.h"
+#include "bloque.h"
 int main()
 {
+    bloque y;
     Vibora a;
     tablero t;
     int contador=0;
