@@ -12,10 +12,9 @@ public:
     int getX();
     int getY();
     bool getActivo();
-
 private:
     int x; //cordenada x
-    int y; //cordenada y;
+    int y; //cordenada y
     bool activo;
 };
 
@@ -23,7 +22,7 @@ Cuadrito::Cuadrito() //constructor default
 {
     x=0;
     y=0;
-    activo=false;
+    bool=false;
 }
 
 Cuadrito::Cuadrito(int iX, int iY, bool iActivo) //constructor con X y Y
@@ -62,6 +61,4 @@ bool Cuadrito::getActivo()
 {
     return activo;
 }
-
-
 #endif // CUADRITO_H_INCLUDED
