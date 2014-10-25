@@ -20,15 +20,14 @@ public:
     void Movimiento();
     bool getEstadoCambio();
     void incrementarCambio();
-    int getCantidadCambiosHechos();
-    void setVarios(int a,int b,int cam,int n);
+    void getCoordCambios(int &a,int&b);
+    void modStack(int a,int b,int ndir);
+    void compStack();
 private:
     int x; //cordenada x
     int y; //cordenada y
-    int cantidadCambios;
-    int cambiosHechos;
-    int coords[20][2];
-    int direcciones[20];
+int stacker[1000][3];
+    int cantCambios;
     bool activo;
     int cx;//coordenada x del cambio
     int cy;//coordenada cy del cambio
@@ -36,14 +35,46 @@ private:
     int nuevadir;//la nueva direccion que tiene que adoptar
     int direccion;
 };
-void Cuadrito::setVarios(int a,int b,int cam, int n){
-coords[cam][0]=a;
-coords[cam][1]=b;
-direcciones[cam]=n;
+void Cuadrito::compStack(){
+if(cambio){
+    bool encontrado=false;
+    for(int i=0;!encontrado&&i<1000;i++){
+    if(stacker[i][2]!=0){
+        encontrado = true;
+        cx=stacker[i][0];
+        cy=stacker[i][1];
+        nuevadir=stacker[i][2];
+        stacker[i][0]=0;
+        stacker[i][1]=0;
+        stacker[i][2]=0;
+
+    }
+    if(i==999)
+        cambio = false;
+    }
 }
-int Cuadrito::getCantidadCambiosHechos(){
-return cambiosHechos;
 }
+void Cuadrito::modStack(int a,int b,int ndir){
+    cambio = true;
+
+if(cantCambios != 1000){
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+    cantCambios++;
+}else{
+    cantCambios=0;
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+}
+    }
+
+void Cuadrito::getCoordCambios(int &a,int&b){
+a=cx;
+b=cy;
+}
+
 void Cuadrito::setCoordCambio(int a, int b){
 cx = a;
 cy = b;
@@ -58,19 +89,17 @@ Cuadrito::Cuadrito() //constructor default
 {
     x=0;
     y=0;
+    cantCambios=0;
+    for(int i=0;i<1000;i++)
+        for(int j=0;j<3;j++)
+        stacker[i][j]=0;
     activo=false;
     direccion=2;
     cambio = false;
     cx=-1;
     cy=-1;
     nuevadir=0;
-    cantidadCambios=0;
-    cambiosHechos=0;
-    for(int i=0;i<20;i++)
-        for(int j=0;j<2;j++)
-            coords[i][j]=-1;
-    for(int i=0;i<20;i++)
-        direcciones[i]=0;
+
 }
 
 Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor con X y Y
@@ -121,24 +150,13 @@ int Cuadrito::getDireccion()
     return direccion;
 }
 void Cuadrito::Movimiento(){
-    if((x==cx&&y==cy)&&cambio){
 
-        if(cantidadCambios==cambiosHechos){
-        cambio=false;
-        cantidadCambios=0;
-        cambiosHechos=0;
-        cx=-1;
-        cy=-1;
-        }
-        else{
-            cx=coords[cambiosHechos][0];
-            cy=coords[cambiosHechos][1];
-            direccion = direcciones[cambiosHechos];
-            cambiosHechos++;
-        }
+    if(x==cx&&y==cy&&cambio)
+    {
 
+        direccion = nuevadir;
+        compStack();
     }
-
     if(direccion==1)
             y-=1;
         if(direccion==2)
@@ -151,7 +169,5 @@ void Cuadrito::Movimiento(){
 bool Cuadrito::getEstadoCambio(){
 return cambio;
 }
-void Cuadrito::incrementarCambio(){
-cantidadCambios++;
-}
+
 #endif // CUADRITO_H_INCLUDED

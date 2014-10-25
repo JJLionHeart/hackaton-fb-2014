@@ -41,3 +41,24 @@
 	<windows.h>
 	"cuadrito.h"
 
+1414231976 source:c:\users\juanjosé\desktop\claseserpiente\main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	"serpiente.h"
+
+1414232019 c:\users\juanjosé\desktop\claseserpiente\serpiente.h
+	<windows.h>
+	<iostream>
+	"cuadrito.h"
+	"cTablero.h"
+
+1414232882 c:\users\juanjosé\desktop\claseserpiente\cuadrito.h
+
+1414211036 c:\users\juanjosé\desktop\claseserpiente\ctablero.h
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"cuadrito.h"
+

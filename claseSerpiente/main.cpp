@@ -7,9 +7,10 @@ int main()
 {
     Vibora a;
     tablero t;
-
+    int contador=0;
     short int u,d,r,l;
     while(true){
+        if(contador==0){
         if((u=GetAsyncKeyState(VK_UP))||(d=GetAsyncKeyState(VK_DOWN))||(r=GetAsyncKeyState(VK_RIGHT))||(l=GetAsyncKeyState(VK_LEFT))){
             u=u>>16;
             u=u&0x1;
@@ -37,8 +38,14 @@ int main()
         }else{
         t.LimpiarTablero();
         a.Mover(t);
+
 }
-    Sleep(1000000000);
+        }else{
+        contador--;
+        t.LimpiarTablero();
+        a.Mover(t);
+        }
+    Sleep(100);
     }
 return 0;
 }
