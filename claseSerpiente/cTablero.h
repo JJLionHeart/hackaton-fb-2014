@@ -11,6 +11,7 @@ public:
     tablero();
     void agregar(Cuadrito c);
     void agregar(int x, int y);
+    void agregar(bloque a);
     void refrescar();
     void LimpiarTablero();
 
@@ -46,6 +47,13 @@ void tablero::agregar(Cuadrito c){
 
 void tablero::agregar(int x, int y){
     Tablero[y][x]=254;
+}
+
+void tablero::agregar(bloque a)
+{
+    int b=a.getX();
+    int c=a.getY();
+    Tablero[b][c]=254;
 }
 
 
