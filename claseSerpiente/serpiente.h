@@ -7,22 +7,27 @@
 #include "bloque.h"
 class Vibora{
 public:
+    //constructor default
+    Vibora();
+    //-----------------------------------
+    //Funciones que modifican a la serpiente
+    //------------------------------------
     void agregarElemento();
-    void getCoordenadaPrincipal(int &ix, int &iy);
     void dibujarVibora(tablero t);
     void Mover(tablero &t);
-    Vibora();
-    void cambiarCuadritos();
     void Modificar(int n,tablero &t);
-    void depurar();
-    void reiniciar();
-    bool comprobarchoque(tablero &t);
+    void cambiarCuadritos();
     void setBloque(bloque *a);
+    void reiniciar();
+    //otras funciones
+    void getCoordenadaPrincipal(int &ix, int &iy);
+    bool comprobarchoque(tablero &t);
+
 private:
-    bloque *b;
-    Cuadrito elementos[100];
-    int Direccion;
-    int iCantidadElementos;
+    bloque *b;//un puntero al objeto bloque que hace crecer a la vibora
+    Cuadrito elementos[100];//la vibora se compone de muchos cuadritos
+    int Direccion;//direccion en el que se mueve la cabeza
+    int iCantidadElementos;//cuantos elementos tiene hasta el momento
 };
 bool Vibora::comprobarchoque(tablero &t){
     bool choque=false;
@@ -79,15 +84,7 @@ for(int i=1;i<3;i++)
     elementos[i].setY(10);
 }
 }
-void Vibora::depurar(){
-    system("cls");
-    int a,b;
-for(int i=0;i<iCantidadElementos;i++){
-        elementos[i].getCoordCambios(a,b);
-    cout<<"Elemento "<<i+1<<": "<<elementos[i].getEstadoCambio()<<" x: "<<a<<" y: "<<b<<endl;
 
-}
-}
 void Vibora::dibujarVibora(tablero t){
 for(int ic = 0;ic<iCantidadElementos;ic++){
     t.agregar(elementos[ic]);
