@@ -6,14 +6,14 @@ class Cuadrito
 public:
     Cuadrito(); //constructo default
     Cuadrito(int iX, int iY, bool iActivo, int direccion); //constructor con variables
-    void setX(int iX);
-    void setY(int iY);
-    void setActivo(bool iActivo);
-    void setDireccion(int dire);
-    void setCoordCambio(int a,int b);
-    void setCambio(bool a);
-    void setNuevaDir(int a);
-    void setC(int ca);
+    void setX(int iX); // sirve para cambiar la coordenada X
+    void setY(int iY); // sirve para cambiar la coordenada y
+    void setActivo(bool iActivo); //sirve para cambiar si el cuadrito esta "vivo" o "muerto"
+    void setDireccion(int dire); //sirve para  cambiar la direccion a la cual se mueve el cuadrito
+    void setCoordCambio(int a,int b); //sirve para establecer en que coordenada va a cambiar el cuadrito a otra direccion
+    void setCambio(bool a); //sirve para establecer si se va a cambiar de direccion
+    void setNuevaDir(int a); //sirve para establecer la nueva direccion a la que va a cambiar
+    //void setC(int ca);
     int getX();
     int getY();
     bool getActivo();
@@ -117,9 +117,9 @@ cambio = a;
 void Cuadrito::setNuevaDir(int a){
 nuevadir=a;
 }
-void Cuadrito::setC(int ca){
+/*void Cuadrito::setC(int ca){
 c=ca;
-}
+}*/
 
 void Cuadrito::setX(int iX) //modificar X
 {
