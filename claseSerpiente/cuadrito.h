@@ -27,8 +27,8 @@ public:
 private:
     int x; //cordenada x
     int y; //cordenada y
-    char c; //<---????
-int stacker[1000][3];
+    char c;
+int stacker[100][3];
     int cantCambios;
     bool activo;
     int cx;//coordenada x del cambio
@@ -43,7 +43,7 @@ Cuadrito::Cuadrito() //constructor default
     x=0;
     y=0;
     cantCambios=0;
-    for(int i=0;i<1000;i++)
+    for(int i=0;i<100;i++)
         for(int j=0;j<3;j++)
         stacker[i][j]=0;
     activo=false;
@@ -62,7 +62,7 @@ Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor co
     activo=iActivo;
     direccion=2;
     c=254;
-     for(int i=0;i<1000;i++)
+     for(int i=0;i<100;i++)
         for(int j=0;j<3;j++)
         stacker[i][j]=0;
     cambio = false;
@@ -70,69 +70,6 @@ Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor co
     cy=-1;
     nuevadir=0;
 }
-
-char Cuadrito::getC(){
-    return c;
-}
-void Cuadrito::compStack(){
-if(cambio){
-    bool encontrado=false;
-    for(int i=0;!encontrado&&i<1000;i++){
-    if(stacker[i][2]!=0){
-        encontrado = true;
-        cx=stacker[i][0];
-        cy=stacker[i][1];
-        nuevadir=stacker[i][2];
-        stacker[i][0]=0;
-        stacker[i][1]=0;
-        stacker[i][2]=0;
-
-    }
-    if(i==999)
-        cambio = false;
-    }
-}
-}
-void Cuadrito::modStack(int a,int b,int ndir){
-    cambio = true;
-if(cantCambios==1000)
-{
-    cantCambios=0;
-    stacker[cantCambios][0]=a;
-    stacker[cantCambios][1]=b;
-    stacker[cantCambios][2]=ndir;
-}
-if(cantCambios != 1000){
-    stacker[cantCambios][0]=a;
-    stacker[cantCambios][1]=b;
-    stacker[cantCambios][2]=ndir;
-    cantCambios++;
-}/*else{
-    cantCambios=0;
-    stacker[cantCambios][0]=a;
-    stacker[cantCambios][1]=b;
-    stacker[cantCambios][2]=ndir;
-}*/
-    }
-
-/*void Cuadrito::getCoordCambios(int &a,int&b){
-a=cx;
-b=cy;
-}*/
-
-void Cuadrito::setCoordCambio(int a, int b){
-cx = a;
-cy = b;
-}
-void Cuadrito::setCambio(bool a){
-cambio = a;
-}
-void Cuadrito::setNuevaDir(int a){
-nuevadir=a;
-}
-/*void Cuadrito::setC(int ca){
-c=ca;
-}*/
 
 void Cuadrito::setX(int iX) //modificar X
 {
@@ -153,6 +90,20 @@ void Cuadrito::setDireccion(int dire)
 {
     direccion=dire;
 }
+
+void Cuadrito::setCoordCambio(int a, int b){
+cx = a;
+cy = b;
+}
+void Cuadrito::setCambio(bool a){
+cambio = a;
+}
+void Cuadrito::setNuevaDir(int a){
+nuevadir=a;
+}
+/*void Cuadrito::setC(int ca){
+c=ca;
+}*/
 
 int Cuadrito::getX() //obtener X
 {
@@ -193,5 +144,59 @@ void Cuadrito::Movimiento(){
 bool Cuadrito::getEstadoCambio(){
 return cambio;
 }
+
+/*void Cuadrito::getCoordCambios(int &a,int&b){
+a=cx;
+b=cy;
+}*/
+
+void Cuadrito::modStack(int a,int b,int ndir){
+    cambio = true;
+if(cantCambios==100)
+{
+    cantCambios=0;
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+}
+if(cantCambios != 100){
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+    cantCambios++;
+}/*else{
+    cantCambios=0;
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+}*/
+    }
+
+char Cuadrito::getC(){
+    return c;
+}
+void Cuadrito::compStack(){
+if(cambio){
+    bool encontrado=false;
+    for(int i=0;!encontrado&&i<100;i++){
+    if(stacker[i][2]!=0){
+        encontrado = true;
+        cx=stacker[i][0];
+        cy=stacker[i][1];
+        nuevadir=stacker[i][2];
+        stacker[i][0]=0;
+        stacker[i][1]=0;
+        stacker[i][2]=0;
+
+    }
+    if(i==99){
+        cambio = false;
+        cantCambios=0;}
+    }
+}
+}
+
+
+
 
 #endif // CUADRITO_H_INCLUDED
