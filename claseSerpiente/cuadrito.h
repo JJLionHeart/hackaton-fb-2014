@@ -14,21 +14,20 @@ public:
     void setCambio(bool a); //sirve para establecer si se va a cambiar de direccion
     void setNuevaDir(int a); //sirve para establecer la nueva direccion a la que va a cambiar
     //void setC(int ca);
-    int getX();
-    int getY();
-    bool getActivo();
-    int getDireccion();
-    void Movimiento();
-    bool getEstadoCambio();
-    void incrementarCambio();
+    int getX(); //obtiene la coordenada x
+    int getY(); //obtiene la coordenada y
+    bool getActivo(); //obtiene si el cuadrito esta activo
+    int getDireccion(); //obtiene la dirección del cuadrito
+    void Movimiento(); //mueve el cuadrito en la idreccion correspondiente y modifica su direccion en caso de ser necesario
+    bool getEstadoCambio(); //obtener si necesita cambiar
     //void getCoordCambios(int &a,int&b);
-    void modStack(int a,int b,int ndir);
+    void modStack(int a,int b,int ndir); //modifica el stack de cambios del jugador y almacena la informacion del siguiente cambio
     char getC();
-    void compStack();
+    void compStack(); //obtiene el siguiente cambio
 private:
     int x; //cordenada x
     int y; //cordenada y
-    char c;
+    char c; //<---????
 int stacker[1000][3];
     int cantCambios;
     bool activo;
@@ -62,6 +61,14 @@ Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor co
     y=iY;
     activo=iActivo;
     direccion=2;
+    c=254;
+     for(int i=0;i<1000;i++)
+        for(int j=0;j<3;j++)
+        stacker[i][j]=0;
+    cambio = false;
+    cx=-1;
+    cy=-1;
+    nuevadir=0;
 }
 
 char Cuadrito::getC(){
@@ -88,18 +95,24 @@ if(cambio){
 }
 void Cuadrito::modStack(int a,int b,int ndir){
     cambio = true;
-
-if(cantCambios != 1000){
-    stacker[cantCambios][0]=a;
-    stacker[cantCambios][1]=b;
-    stacker[cantCambios][2]=ndir;
-    cantCambios++;
-}else{
+if(cantCambios==1000)
+{
     cantCambios=0;
     stacker[cantCambios][0]=a;
     stacker[cantCambios][1]=b;
     stacker[cantCambios][2]=ndir;
 }
+if(cantCambios != 1000){
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+    cantCambios++;
+}/*else{
+    cantCambios=0;
+    stacker[cantCambios][0]=a;
+    stacker[cantCambios][1]=b;
+    stacker[cantCambios][2]=ndir;
+}*/
     }
 
 /*void Cuadrito::getCoordCambios(int &a,int&b){
