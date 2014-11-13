@@ -23,22 +23,23 @@
 	"cuadrito.h"
 	"bloque.h"
 
-1414239522 source:c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\main.cpp
+1414255083 source:c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\main.cpp
 	<iostream>
 	<windows.h>
 	<conio.h>
 	"serpiente.h"
 	"bloque.h"
 
-1414234981 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\serpiente.h
+1415751897 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\serpiente.h
 	<windows.h>
 	<iostream>
 	"cuadrito.h"
 	"cTablero.h"
+	"bloque.h"
 
-1414237684 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\cuadrito.h
+1415915065 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\cuadrito.h
 
-1414238106 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\ctablero.h
+1415751897 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\ctablero.h
 	<stdlib.h>
 	<stdio.h>
 	<conio.h>
@@ -69,13 +70,9 @@
 	"cuadrito.h"
 	"bloque.h"
 
-1414240227 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\bloque.h
+1415751897 c:\users\josé humberto\desktop\hackaton-fb-2014\hackaton-fb-2014\claseserpiente\bloque.h
 	<stdlib.h>
 	<time.h>
-	<windows.h>
-	<iostream>
-	"cuadrito.h"
-	"cTablero.h"
 
 1415585089 c:\users\juanjosé\documents\github\hackaton-fb-2014\claseserpiente\bloque.h
 	<stdlib.h>

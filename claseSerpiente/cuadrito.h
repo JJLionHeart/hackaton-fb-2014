@@ -4,26 +4,25 @@
 class Cuadrito
 {
 public:
-    Cuadrito();
-    Cuadrito(int iX, int iY, bool iActivo, int direccion);
-    Cuadrito(int iX, int iY);
+    Cuadrito(); //constructo default
+    Cuadrito(int iX, int iY, bool iActivo, int direccion); //constructor con variables
     void setX(int iX);
     void setY(int iY);
     void setActivo(bool iActivo);
     void setDireccion(int dire);
+    void setCoordCambio(int a,int b);
+    void setCambio(bool a);
+    void setNuevaDir(int a);
+    void setC(int ca);
     int getX();
     int getY();
     bool getActivo();
     int getDireccion();
-    void setCoordCambio(int a,int b);
-    void setCambio(bool a);
-    void setNuevaDir(int a);
     void Movimiento();
     bool getEstadoCambio();
     void incrementarCambio();
-    void getCoordCambios(int &a,int&b);
+    //void getCoordCambios(int &a,int&b);
     void modStack(int a,int b,int ndir);
-    void setC(int ca);
     char getC();
     void compStack();
 private:
@@ -39,6 +38,32 @@ int stacker[1000][3];
     int nuevadir;//la nueva direccion que tiene que adoptar
     int direccion;
 };
+Cuadrito::Cuadrito() //constructor default
+{
+    c=254;
+    x=0;
+    y=0;
+    cantCambios=0;
+    for(int i=0;i<1000;i++)
+        for(int j=0;j<3;j++)
+        stacker[i][j]=0;
+    activo=false;
+    direccion=2;
+    cambio = false;
+    cx=-1;
+    cy=-1;
+    nuevadir=0;
+
+}
+
+Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor con X y Y
+{
+    x=iX;
+    y=iY;
+    activo=iActivo;
+    direccion=2;
+}
+
 char Cuadrito::getC(){
     return c;
 }
@@ -77,10 +102,10 @@ if(cantCambios != 1000){
 }
     }
 
-void Cuadrito::getCoordCambios(int &a,int&b){
+/*void Cuadrito::getCoordCambios(int &a,int&b){
 a=cx;
 b=cy;
-}
+}*/
 
 void Cuadrito::setCoordCambio(int a, int b){
 cx = a;
@@ -94,37 +119,6 @@ nuevadir=a;
 }
 void Cuadrito::setC(int ca){
 c=ca;
-}
-Cuadrito::Cuadrito() //constructor default
-{
-    c=254;
-    x=0;
-    y=0;
-    cantCambios=0;
-    for(int i=0;i<1000;i++)
-        for(int j=0;j<3;j++)
-        stacker[i][j]=0;
-    activo=false;
-    direccion=2;
-    cambio = false;
-    cx=-1;
-    cy=-1;
-    nuevadir=0;
-
-}
-
-Cuadrito::Cuadrito(int iX, int iY, bool iActivo, int direccion) //constructor con X y Y
-{
-    x=iX;
-    y=iY;
-    activo=iActivo;
-    direccion=2;
-}
-
-Cuadrito::Cuadrito(int iX, int iY)
-{
-    x=iX;
-    y=iY;
 }
 
 void Cuadrito::setX(int iX) //modificar X
