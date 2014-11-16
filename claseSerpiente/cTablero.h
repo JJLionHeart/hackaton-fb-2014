@@ -88,8 +88,7 @@ void tablero::LimpiarTablero(){//borra todo el contenido del tablero, poniendo e
 void tablero::refrescar(){//borra lo que esté en pantalla y vuelve a imprimir el tablero
     system("cls");//borra pantalla
     bordes();
-    Tablero[24][79]='\r';
-    Tablero[25][0]='\0';
+    Tablero[24][79]='\0';
     printf("%s", Tablero);//imprime tablero
 
 }

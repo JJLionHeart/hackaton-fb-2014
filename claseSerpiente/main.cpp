@@ -8,52 +8,27 @@ using namespace std;
 int main()
 {
     bloque y;
-    Vibora a;
     tablero t;
     bloque *point;
     point = &y;
+    tablero *tab;
+    tab=&t;
     t.agregar(y);
-    a.setBloque(point);
-    int contador=0;
-    short int u,d,r,l;
+
+    Vibora *serpientes[2];
+    serpientes[0]=new Vibora(point,2,10,tab,10,10,1);
+    serpientes[1]= new Vibora(point,2,10,tab,10,20,2);
+
     while(true){
-        if(contador==0){
-        if((u=GetAsyncKeyState(VK_UP))||(d=GetAsyncKeyState(VK_DOWN))||(r=GetAsyncKeyState(VK_RIGHT))||(l=GetAsyncKeyState(VK_LEFT))){
-            u=u>>16;
-            u=u&0x1;
-            d=d>>16;
-            d=d&0x1;
-            r=r>>16;
-            r=r&0x1;
-            l=l>>16;
-            l=l&0x1;
-            if(u){
+    serpientes[0]->comprobarMovimiento();
 
-                a.Modificar(1,t);
 
-            }else if(r){
+    serpientes[1]->comprobarMovimiento();
+    serpientes[0]->dibujarVibora(t);
+    serpientes[1]->dibujarVibora(t);
+    t.agregar(y);
+    t.refrescar();
 
-                a.Modificar(2,t);
-            }else if(d){
-
-                a.Modificar(3,t);
-            }else if(l){
-
-                a.Modificar(4,t);
-            }
-
-        }else{
-        t.LimpiarTablero();
-        t.agregar(y);
-        a.Mover(t);
-
-}
-        }else{
-        contador--;
-        t.LimpiarTablero();
-        t.agregar(y);
-        a.Mover(t);
-        }
     Sleep(100);
     }
 return 0;

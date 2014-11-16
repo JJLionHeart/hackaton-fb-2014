@@ -7,13 +7,15 @@
 #include "bloque.h"
 class Vibora{
 public:
-    //constructor default
-    Vibora();
+    //constructores
+
+    Vibora(bloque *blo,int D,int cant,tablero *ta,int xi,int yi,int config);
     //-----------------------------------
     //Funciones que modifican a la serpiente
     //------------------------------------
+    void comprobarMovimiento();
     void agregarElemento();//activa un cuadrito en la serpiente
-    void dibujarVibora(tablero t);//muestra la serpiente en el tablero
+    void dibujarVibora(tablero &t);//muestra la serpiente en el tablero
     void Mover(tablero &t);//mueve la serpiente en el tablero
     void Modificar(int n,tablero &t);//modifica la direccion de la serpiente en si se presiona una tecla
     void cambiarCuadritos();//actualiza el stacker de todos los cuadritos
@@ -28,25 +30,74 @@ private:
     Cuadrito elementos[100];//la vibora se compone de muchos cuadritos
     int Direccion;//direccion en el que se mueve la cabeza
     int iCantidadElementos;//cuantos elementos tiene hasta el momento
+    tablero *tab;
+    int up,down,right,left;
 };
-Vibora::Vibora(){
-    Direccion = 2;
+
+Vibora::Vibora(bloque *blo,int D,int cant,tablero *ta,int xi,int yi,int config){
+    Direccion=D;
 for(int i=0;i<100;i++){
     elementos[i].setActivo(false);
     elementos[i].setX(0);
     elementos[i].setY(0);
-    elementos[i].setDireccion(2);
+    elementos[i].setDireccion(D);
 }
-
-iCantidadElementos = 3;
+b=blo;
+tab=ta;
+iCantidadElementos = cant;
 elementos[0].setActivo(true);
-elementos[0].setX(12);
-elementos[0].setY(10);
-for(int i=1;i<3;i++)
+elementos[0].setX(xi);
+elementos[0].setY(yi);
+for(int i=1;i<iCantidadElementos;i++)
 {
     elementos[i].setActivo(true);
-    elementos[i].setX(12-i);
-    elementos[i].setY(10);
+    elementos[i].setX(xi-i);
+    elementos[i].setY(yi);
+}
+if(config == 1)
+{
+    up = 0x26;
+    left = 0x25;
+    down = 0x28;
+    right= 0x27;
+
+}else if (config == 2){
+    up = 0x57;
+    left = 0x41;
+    down= 0x53;
+    right = 0x44;
+}
+}
+void Vibora::comprobarMovimiento(){
+    short int u,d,r,l;
+if((u=GetAsyncKeyState(up))||(d=GetAsyncKeyState(down))||(r=GetAsyncKeyState(right))||(l=GetAsyncKeyState(left))){
+            u=u>>16;
+            u=u&0x1;
+            d=(d&0x800||d&0x1);
+            r=r>>16;
+            r=r&0x1;
+            l=l>>16;
+            l=l&0x1;
+            if(u){
+
+                Modificar(1,*tab);
+
+            }else if(r){
+
+                Modificar(2,*tab);
+            }else if(d){
+
+                Modificar(3,*tab);
+
+            }else if(l){
+
+                Modificar(4,*tab);
+            }
+
+        }else{
+        tab->LimpiarTablero();
+        Mover(*tab);
+
 }
 }
 void Vibora::agregarElemento()
@@ -83,11 +134,10 @@ void Vibora::agregarElemento()
 	}
 	iCantidadElementos++;
 }
-void Vibora::dibujarVibora(tablero t){
+void Vibora::dibujarVibora(tablero &t){
 for(int ic = 0;ic<iCantidadElementos;ic++){
     t.agregar(elementos[ic]);
 }
-t.refrescar();
 }
 void Vibora::Mover(tablero &t){
 
@@ -103,7 +153,7 @@ if(elementos[0].getX()==b->getX()&&elementos[0].getY()==b->getY()){
     t.agregar(*b);
 }
 }
-dibujarVibora(t);
+
 //depurar();
 //Sleep(1000);
 }
