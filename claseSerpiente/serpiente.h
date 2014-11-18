@@ -141,9 +141,7 @@ for(int ic = 0;ic<iCantidadElementos;ic++){
 }
 void Vibora::Mover(tablero &t){
 
-if(comprobarchoque(t))
-    reiniciar();
-else{
+
 for(int i=0;i<iCantidadElementos;i++)
     elementos[i].Movimiento();
 if(elementos[0].getX()==b->getX()&&elementos[0].getY()==b->getY()){
@@ -152,8 +150,10 @@ if(elementos[0].getX()==b->getX()&&elementos[0].getY()==b->getY()){
     b->cambiaLugar();
     t.agregar(*b);
 }
-}
 
+if(comprobarchoque(*tab)){
+    reiniciar();
+}
 //depurar();
 //Sleep(1000);
 }
@@ -221,6 +221,7 @@ for(int i=1;i<3;i++)
     elementos[i].setX(12-i);
     elementos[i].setY(10);
 }
+
 }
 void Vibora::getCoordenadaPrincipal(int &ix, int &iy){
 ix=elementos[0].getX();
@@ -228,14 +229,12 @@ iy=elementos[0].getY();
 }
 bool Vibora::comprobarchoque(tablero &t){
     bool choque=false;
-if(Direccion==1)
-    choque = t.checarcolision(elementos[0].getX(),elementos[0].getY()-1);
-else if(Direccion==2)
-    choque = t.checarcolision(elementos[0].getX()+1,elementos[0].getY());
-else if(Direccion==3)
-    choque = t.checarcolision(elementos[0].getX(),elementos[0].getY()+1);
-else if(Direccion==4)
-    choque = t.checarcolision(elementos[0].getX()-1,elementos[0].getY());
+    if(elementos[0].getX()==0||elementos[0].getX()==79||elementos[0].getY()==0||elementos[0].getY()==24)
+        choque=true;
+    for(int i=1;i<iCantidadElementos;i++){
+        if(elementos[i].getX()==elementos[0].getX()&&elementos[i].getY()==elementos[0].getY())
+            choque=true;
+    }
 return choque;
 }
 

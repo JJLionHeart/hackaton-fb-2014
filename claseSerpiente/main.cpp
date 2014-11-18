@@ -17,15 +17,15 @@ int main()
 
     Vibora *serpientes[2];
     serpientes[0]=new Vibora(point,2,10,tab,10,10,1);
-    serpientes[1]= new Vibora(point,2,10,tab,10,20,2);
+    //serpientes[1]= new Vibora(point,2,10,tab,10,20,2);
 
     while(true){
     serpientes[0]->comprobarMovimiento();
 
 
-    serpientes[1]->comprobarMovimiento();
+   // serpientes[1]->comprobarMovimiento();
     serpientes[0]->dibujarVibora(t);
-    serpientes[1]->dibujarVibora(t);
+   // serpientes[1]->dibujarVibora(t);
     t.agregar(y);
     t.refrescar();
 
